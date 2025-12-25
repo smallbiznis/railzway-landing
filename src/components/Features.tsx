@@ -1,11 +1,11 @@
-import type { SVGProps } from "react";
+import type { ReactElement, SVGProps } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { defaultViewport, getSectionVariants } from "../lib/motion";
 
 type Feature = {
   title: string;
   description: string;
-  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  icon: (props: SVGProps<SVGSVGElement>) => ReactElement;
 };
 
 const features: Feature[] = [

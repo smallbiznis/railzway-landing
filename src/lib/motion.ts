@@ -38,12 +38,13 @@ export const motionPresets = {
   },
 } satisfies Record<string, Variants>;
 
-export const getSectionVariants = (reducedMotion: boolean) => {
+export const getSectionVariants = (reducedMotion: boolean | null) => {
+  const prefersReducedMotion = !!reducedMotion;
   const container: Variants = {
     hidden: { opacity: 1 },
     show: {
       opacity: 1,
-      transition: reducedMotion
+      transition: prefersReducedMotion
         ? {}
         : {
             staggerChildren: motionTokens.stagger,
@@ -52,7 +53,7 @@ export const getSectionVariants = (reducedMotion: boolean) => {
     },
   };
 
-  const item: Variants = reducedMotion
+  const item: Variants = prefersReducedMotion
     ? {
         hidden: { opacity: 0 },
         show: { opacity: 1, transition: baseTransition },
