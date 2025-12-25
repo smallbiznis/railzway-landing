@@ -3,7 +3,7 @@ import { defaultViewport, getSectionVariants } from "../lib/motion";
 
 const bulletPoints = [
   "Ledger-based accounting",
-  "Org-scoped workspace (Grafana-style)",
+  "Org-scoped workspace",
   "Event-driven billing pipeline",
   "API-first & OSS-friendly",
 ];

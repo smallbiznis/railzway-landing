@@ -1,17 +1,10 @@
 import Architecture from "./components/Architecture";
 import CTA from "./components/CTA";
 import Features from "./components/Features";
+import FreeTierSection from "./components/FreeTierSection";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-import { Badge, Button, Surface } from "./components/ui";
-
-const trustMarkers = [
-  "Nimbus",
-  "Flux",
-  "Northwind",
-  "OpenByte",
-  "Aperture",
-];
+import { Button, Surface } from "./components/ui";
 
 const ossHighlights = [
   {
@@ -38,19 +31,7 @@ function App() {
       </div>
 
       <Hero />
-
-      <section className="border-y border-border-subtle bg-bg-primary/60 py-6">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 text-sm text-text-muted md:flex-row md:items-center md:justify-between">
-          <p>Designed for teams building serious SaaS infrastructure</p>
-          <div className="flex flex-wrap gap-3">
-            {trustMarkers.map((marker) => (
-              <Badge key={marker} variant="neutral">
-                {marker}
-              </Badge>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FreeTierSection />
 
       <Features />
       <Architecture />
