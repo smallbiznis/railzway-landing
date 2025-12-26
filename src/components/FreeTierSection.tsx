@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import { defaultViewport, getSectionVariants } from "../lib/motion";
+import { CTA } from "../design-system/cta";
 import { Badge, Button, Surface } from "./ui";
 
 const features = [
@@ -109,10 +110,10 @@ function FreeTierSection() {
 
               <div className="flex flex-wrap items-center gap-3">
                 <Button as="a" href="#get-started">
-                  Create free workspace
+                  {CTA.primary.startFree}
                 </Button>
-                <Button as="a" href="#docs" variant="ghost">
-                  View limits & docs
+                <Button as="a" href="#limits" variant="ghost">
+                  {CTA.secondary.viewLimits}
                 </Button>
               </div>
             </Surface>

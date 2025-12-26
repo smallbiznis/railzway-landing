@@ -1,10 +1,13 @@
 import Architecture from "./components/Architecture";
 import CTA from "./components/CTA";
+import CapabilitiesSection from "./components/CapabilitiesSection";
 import Features from "./components/Features";
 import FreeTierSection from "./components/FreeTierSection";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import { CTA as CTA_LABELS } from "./design-system/cta";
 import { Button, Surface } from "./components/ui";
+import PricingPage from "./pages/PricingPage";
 
 const ossHighlights = [
   {
@@ -22,6 +25,12 @@ const ossHighlights = [
 ];
 
 function App() {
+  const isPricingRoute =
+    typeof window !== "undefined" && window.location.pathname === "/valora-landing/pricing";
+  if (isPricingRoute) {
+    return <PricingPage />;
+  }
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-bg-primary text-text-primary">
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -35,6 +44,7 @@ function App() {
 
       <Features />
       <Architecture />
+      <CapabilitiesSection />
 
       <section className="py-20">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -50,7 +60,7 @@ function App() {
               losing velocity. Keep control of your data while shipping faster.
             </p>
             <Button as="a" href="https://github.com" variant="secondary">
-              Explore the repository
+              {CTA_LABELS.secondary.learnMore}
             </Button>
           </div>
           <div className="grid gap-4">

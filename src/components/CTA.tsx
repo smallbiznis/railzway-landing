@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import { defaultViewport, getSectionVariants } from "../lib/motion";
+import { CTA as CTA_LABELS } from "../design-system/cta";
 import { Button } from "./ui";
 
 function CTA() {
@@ -34,10 +35,10 @@ function CTA() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Button as="a" href="#get-started">
-                Get started
+                {CTA_LABELS.primary.getStarted}
               </Button>
               <Button as="a" href="#docs" variant="secondary">
-                Read the docs
+                {CTA_LABELS.secondary.viewDocs}
               </Button>
             </div>
           </div>

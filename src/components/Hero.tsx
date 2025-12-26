@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import { getSectionVariants } from "../lib/motion";
+import { CTA } from "../design-system/cta";
 import { Badge, Button } from "./ui";
 
 const stats = [
@@ -38,10 +39,10 @@ function Hero() {
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <Button as="a" href="#get-started">
-                Get started
+                {CTA.primary.getStarted}
               </Button>
               <Button as="a" href="https://github.com" variant="secondary">
-                View GitHub
+                {CTA.secondary.learnMore}
               </Button>
             </div>
             <div className="flex flex-wrap gap-6 text-xs uppercase tracking-[0.2em] text-text-muted">
