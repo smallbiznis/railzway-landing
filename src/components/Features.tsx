@@ -11,7 +11,8 @@ type Feature = {
 const features: Feature[] = [
   {
     title: "Subscription billing",
-    description: "Flexible plans with proration, trials, and upgrades.",
+    description:
+      "Define platform fees per org and the entitlements that shape billable usage.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
         <rect x="3" y="6" width="18" height="12" rx="2" />
@@ -22,7 +23,8 @@ const features: Feature[] = [
   },
   {
     title: "Usage-based pricing",
-    description: "Metered usage with tiered and volume pricing models.",
+    description:
+      "Attach pricing rules to metered events and rated aggregates so usage drives charges.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
         <path d="M4 19V5" />
@@ -33,7 +35,8 @@ const features: Feature[] = [
   },
   {
     title: "Metering & rating",
-    description: "Real-time aggregation with precise rating windows.",
+    description:
+      "Measure product events, aggregate into meters, and rate by window for audit-ready usage totals.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
         <circle cx="12" cy="12" r="7" />
@@ -45,7 +48,8 @@ const features: Feature[] = [
   },
   {
     title: "Invoices & ledger",
-    description: "Ledger-backed invoices, credits, and adjustments.",
+    description:
+      "Generate invoices from ledgered usage and subscription state with traceable adjustments.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
         <path d="M7 4h8l4 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
@@ -57,7 +61,7 @@ const features: Feature[] = [
   },
   {
     title: "Org-scoped dashboard",
-    description: "Workspace views with role-aware billing controls.",
+    description: "View usage, quotas, and limits per org with role-aware controls.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
         <rect x="4" y="5" width="7" height="7" rx="1.5" />
@@ -69,7 +73,8 @@ const features: Feature[] = [
   },
   {
     title: "OSS-first architecture",
-    description: "Open-core primitives with clean extension points.",
+    description:
+      "Open-core primitives keep pricing logic portable as your model evolves.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
         <path d="M12 4l4 4-4 4-4-4 4-4z" />
@@ -98,11 +103,11 @@ function Features() {
             Core features
           </p>
           <h2 className="text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">
-            Billing primitives, composable APIs
+            Usage-aware billing primitives
           </h2>
           <p className="text-base text-text-secondary">
-            Build pricing models with granular control across subscription,
-            usage, and ledger workflows.
+            Define how events are measured, aggregated, and rated, then tie
+            them to subscription entitlements and ledger output.
           </p>
         </motion.div>
 

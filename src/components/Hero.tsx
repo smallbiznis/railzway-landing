@@ -30,11 +30,12 @@ function Hero() {
             </Badge>
             <div className="space-y-4">
               <h1 className="text-balance text-4xl font-semibold tracking-tight text-text-primary sm:text-5xl lg:text-6xl">
-                Billing, pricing, and usage — built for modern SaaS
+                Control billing logic from platform fees to measured usage
               </h1>
               <p className="text-balance text-lg text-text-secondary sm:text-xl">
-                An open-core billing engine for subscriptions, usage-based
-                pricing, and metered products.
+                Valora Cloud ingests product events, aggregates them into
+                meters, and rates usage alongside subscriptions so pricing
+                tracks real behavior as customers grow.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">

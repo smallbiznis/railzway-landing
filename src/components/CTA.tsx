@@ -24,14 +24,14 @@ function CTA() {
           <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-accent-primary/10 blur-lg" />
           <div className="relative space-y-6">
             <p className="text-xs uppercase tracking-[0.3em] text-text-muted">
-              Ready to launch
+              Ready to define
             </p>
             <h2 className="text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">
-              Start building billing the right way
+              Start defining usage-based billing
             </h2>
             <p className="text-base text-text-secondary">
-              Self-host Valora or ship with Valora Cloud. Keep control over your
-              pricing logic as you scale.
+              Explore Valora Cloud to map subscriptions, meters, and quotas to
+              real product behavior, then validate pricing as you scale.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button as="a" href="#get-started">

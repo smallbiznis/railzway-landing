@@ -1,10 +1,12 @@
 import Architecture from "./components/Architecture";
+import BillingFlowSection from "./components/BillingFlowSection";
 import CTA from "./components/CTA";
 import CapabilitiesSection from "./components/CapabilitiesSection";
 import Features from "./components/Features";
 import FreeTierSection from "./components/FreeTierSection";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import UsagePhilosophySection from "./components/UsagePhilosophySection";
 import { CTA as CTA_LABELS } from "./design-system/cta";
 import { Button, Surface } from "./components/ui";
 import PricingPage from "./pages/PricingPage";
@@ -43,6 +45,44 @@ function App() {
       <FreeTierSection />
 
       <Features />
+      <section className="py-20">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="max-w-3xl space-y-6">
+            <h2 className="text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">
+              Predictable billing by design
+            </h2>
+            <div className="space-y-4 text-base text-text-secondary">
+              <p>
+                Valora Cloud prices a base platform subscription, then adds
+                metered usage based on the events you send and the meters you
+                define. This keeps billing tied to real system activity instead
+                of assumptions.
+              </p>
+              <p>
+                Quotas set expected throughput and protect both your service and
+                ours. They are guardrails with visibility, not sudden blockers.
+              </p>
+              <p>
+                When usage grows, you can raise limits or move to a higher level
+                without downtime or re-architecture. Entitlements update in
+                place while your meters stay stable.
+              </p>
+              <p>
+                Usage is measured, aggregated, and rated with versioned,
+                append-only logic so pricing can evolve without breaking
+                existing behavior. Charges remain traceable and predictable as
+                your product scales.
+              </p>
+            </div>
+            <p className="text-sm text-text-muted">
+              Detailed pricing lives on the pricing page; this section explains
+              the model, not numbers.
+            </p>
+          </div>
+        </div>
+      </section>
+      <BillingFlowSection />
+      <UsagePhilosophySection />
       <Architecture />
       <CapabilitiesSection />
 
