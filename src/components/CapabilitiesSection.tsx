@@ -3,21 +3,21 @@ import { defaultViewport, getSectionVariants } from "../lib/motion";
 
 const capabilities = [
   {
-    title: "Usage-based billing without guesswork",
+    title: "Measured usage, rated deterministically",
     description:
-      "Ingest usage events, apply pricing rules, and generate invoices from a deterministic pipeline.",
+      "Ingest events, aggregate into meters, and rate them into billable usage aligned to pricing rules.",
     visual: "Events → Meters → Pricing → Ledger → Invoices",
   },
   {
     title: "Predictable billing workflows",
     description:
-      "Preview invoices, simulate billing periods, and audit charges before they are committed.",
+      "Preview charges, simulate periods, and validate quota impact before commit.",
     visual: "Dry run → Preview → Commit",
   },
   {
-    title: "Multi-tenant, org-scoped billing",
+    title: "Org-scoped limits and upgrades",
     description:
-      "Isolate customers, pricing, and usage by organization with dedicated workspaces.",
+      "Apply org-level subscriptions and usage quotas; raise limits without downtime or re-architecture.",
     visual: "Org A | Org B | Org C",
   },
 ];
@@ -40,10 +40,11 @@ function CapabilitiesSection() {
             Capabilities
           </p>
           <h2 className="text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">
-            What you can build with Valora
+            Operational billing you can reason about
           </h2>
           <p className="text-base text-text-secondary">
-            Composable billing primitives for predictable revenue workflows.
+            Deterministic pipelines for subscription fees, usage quotas, and
+            ledgered charges.
           </p>
         </motion.div>
 
