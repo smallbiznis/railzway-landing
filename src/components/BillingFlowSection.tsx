@@ -39,7 +39,7 @@ function BillingFlowSection() {
             Hybrid pricing flow, end to end
           </h2>
           <p className="text-base text-text-secondary">
-            Valora supports subscriptions and usage together: entitlements and
+            Railzway supports subscriptions and usage together: entitlements and
             metered events both feed pricing rules. Pricing logic is explicit
             and inspectable, and invoices are derived from ledgered source data,
             not mutable state.

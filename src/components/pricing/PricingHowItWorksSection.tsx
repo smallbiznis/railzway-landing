@@ -10,7 +10,7 @@ function PricingHowItWorksSection() {
     <section className="py-16">
       <div className="mx-auto w-full max-w-4xl px-6">
         <h2 className="text-2xl font-semibold text-text-primary sm:text-3xl">
-          How Valora pricing works
+          How Railzway pricing works
         </h2>
         <ol className="mt-6 space-y-4 text-sm text-text-secondary">
           {steps.map((step, index) => (

@@ -30,7 +30,7 @@ function CTA() {
               Start defining usage-based billing
             </h2>
             <p className="text-base text-text-secondary">
-              Explore Valora Cloud to map subscriptions, meters, and quotas to
+              Explore Railzway Cloud to map subscriptions, meters, and quotas to
               real product behavior, then validate pricing as you scale.
             </p>
             <div className="flex flex-wrap gap-3">

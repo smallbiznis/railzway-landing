@@ -1,12 +1,12 @@
-# Valora Design System
+# Railzway Design System
 
-Shared, token-based design system for both `valora-landing` and
-`valora-dashboard`. The goal is a calm, confident, infrastructure-grade UI that
+Shared, token-based design system for both `railzway-landing` and
+`railzway-dashboard`. The goal is a calm, confident, infrastructure-grade UI that
 stays consistent across marketing and product surfaces.
 
 ## Philosophy
 
-- Dark-first, neutral palette with a single Valora green accent.
+- Dark-first, neutral palette with a single Railzway green accent.
 - Tokens first. No hardcoded colors in components.
 - Simple, composable primitives that do not assume layout or business logic.
 - Motion is supportive, not decorative. Respect reduced motion.

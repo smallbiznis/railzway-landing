@@ -30,7 +30,7 @@ function Architecture() {
               Built for scale, clarity, and control
             </h2>
             <p className="text-base text-text-secondary">
-              Every piece of Valora is designed for auditable billing and
+              Every piece of Railzway is designed for auditable billing and
               predictable revenue workflows across teams.
             </p>
             <ul className="space-y-3 text-sm text-text-secondary">
@@ -44,15 +44,15 @@ function Architecture() {
           </motion.div>
 
           <motion.div
-            className="rounded-2xl border border-border-subtle bg-bg-surface/50 p-6"
+            className="rounded-2xl border border-border-strong bg-bg-primary shadow-xl p-6"
             variants={item}
           >
             <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-text-muted">
               <span>billing.pipeline.ts</span>
               <span>v1.4</span>
             </div>
-            <div className="mt-5 rounded-2xl border border-border-subtle bg-bg-primary/80 p-5">
-              <pre className="whitespace-pre-wrap text-xs text-text-secondary font-mono">
+            <div className="mt-5 rounded-2xl border border-border-strong bg-slate-900 p-5 shadow-inner">
+              <pre className="whitespace-pre-wrap text-xs text-slate-200 font-mono">
                 {`pipeline("usage")
   .ingest("events")
   .rate("meter")

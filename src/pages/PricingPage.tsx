@@ -1,3 +1,4 @@
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PricingBreakdownSection from "../components/pricing/PricingBreakdownSection";
 import PricingHowItWorksSection from "../components/pricing/PricingHowItWorksSection";
@@ -13,6 +14,7 @@ function PricingPage() {
         <div className="absolute bottom-[-25%] right-10 h-96 w-96 rounded-full bg-bg-subtle/20 blur-lg" />
       </div>
 
+      <Navbar />
       <PricingPlansSection />
       <PricingHowItWorksSection />
       <PricingBreakdownSection />

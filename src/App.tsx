@@ -1,11 +1,13 @@
 import Architecture from "./components/Architecture";
 import BillingFlowSection from "./components/BillingFlowSection";
+import BoundariesSection from "./components/BoundariesSection";
 import CTA from "./components/CTA";
 import CapabilitiesSection from "./components/CapabilitiesSection";
+import DeploymentSection from "./components/DeploymentSection";
 import Features from "./components/Features";
-import FreeTierSection from "./components/FreeTierSection";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
 import UsagePhilosophySection from "./components/UsagePhilosophySection";
 import { CTA as CTA_LABELS } from "./design-system/cta";
 import { Button, Surface } from "./components/ui";
@@ -13,38 +15,40 @@ import PricingPage from "./pages/PricingPage";
 
 const ossHighlights = [
   {
-    title: "OSS core",
-    description: "Billing primitives and ledger logic available in the open.",
+    title: "Dual Licensing",
+    description: "AGPLv3 for open source, Commercial license for proprietary use contexts.",
   },
   {
-    title: "Self-host or Cloud",
-    description: "Run it yourself or let Valora manage the control plane.",
+    title: "Explicit Boundaries",
+    description: "Billing logic is separated from payments, identity, and infrastructure concerns.",
   },
   {
-    title: "No vendor lock-in",
-    description: "Portable data models and clean export APIs.",
+    title: "Self-Hosted Ownership",
+    description: "Teams retain full control over billing data and logic.",
   },
 ];
 
 function App() {
   const isPricingRoute =
-    typeof window !== "undefined" && window.location.pathname === "/valora-landing/pricing";
+    typeof window !== "undefined" && window.location.pathname === "/railzway-landing/pricing";
   if (isPricingRoute) {
     return <PricingPage />;
   }
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-bg-primary text-text-primary">
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-32 right-[-15%] h-80 w-80 rounded-full bg-accent-primary/10 blur-lg" />
-        <div className="absolute top-40 left-[-10%] h-96 w-96 rounded-full bg-accent-glow/10 blur-lg" />
-        <div className="absolute bottom-[-25%] right-10 h-96 w-96 rounded-full bg-bg-subtle/20 blur-lg" />
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent-primary/5 via-bg-primary to-bg-primary" />
+        <div className="absolute -top-[40%] -right-[20%] w-[80%] h-[80%] rounded-full bg-accent-primary/5 blur-3xl opacity-50" />
+        <div className="absolute top-[20%] -left-[20%] w-[60%] h-[60%] rounded-full bg-accent-glow/10 blur-3xl opacity-40" />
       </div>
 
+      <Navbar />
       <Hero />
-      <FreeTierSection />
-
       <Features />
+
+      <BoundariesSection />
+
       <section className="py-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="max-w-3xl space-y-6">
@@ -53,35 +57,26 @@ function App() {
             </h2>
             <div className="space-y-4 text-base text-text-secondary">
               <p>
-                Valora Cloud prices a base platform subscription, then adds
-                metered usage based on the events you send and the meters you
-                define. This keeps billing tied to real system activity instead
-                of assumptions.
+                Railzway takes a deliberate approach: make billing boring, deterministic, and explainable.
+                It is a financial truth system, not a convenience feature.
               </p>
               <p>
-                Quotas set expected throughput and protect both your service and
-                ours. They are guardrails with visibility, not sudden blockers.
+                In many systems, billing logic is scattered across application code, difficult to audit,
+                and tightly coupled with payments. Railzway extracts these concerns into a dedicated engine.
               </p>
               <p>
-                When usage grows, you can raise limits or move to a higher level
-                without downtime or re-architecture. Entitlements update in
-                place while your meters stay stable.
-              </p>
-              <p>
-                Usage is measured, aggregated, and rated with versioned,
-                append-only logic so pricing can evolve without breaking
-                existing behavior. Charges remain traceable and predictable as
-                your product scales.
+                Usage is measured, aggregated, and rated with versioned, append-only logic so pricing
+                can evolve without breaking existing behavior. Charges remain traceable and predictable.
               </p>
             </div>
             <p className="text-sm text-text-muted">
-              Detailed pricing lives on the pricing page; this section explains
-              the model, not numbers.
+              Built independently to design systems with clear boundaries, correctness, and accountability.
             </p>
           </div>
         </div>
       </section>
       <BillingFlowSection />
+      <DeploymentSection />
       <UsagePhilosophySection />
       <Architecture />
       <CapabilitiesSection />
@@ -93,13 +88,13 @@ function App() {
               Open source
             </p>
             <h2 className="text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">
-              Open-core by default, flexible by design
+              Open-core by default
             </h2>
             <p className="text-base text-text-secondary">
-              Valora gives you the primitives to own billing internally without
+              Railzway gives you the primitives to own billing internally without
               losing velocity. Keep control of your data while shipping faster.
             </p>
-            <Button as="a" href="https://github.com" variant="secondary">
+            <Button as="a" href="https://github.com/smallbiznis/railzway" variant="secondary">
               {CTA_LABELS.secondary.learnMore}
             </Button>
           </div>

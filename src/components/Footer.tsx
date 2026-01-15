@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="border-t border-border-subtle py-10">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 text-sm text-text-muted md:flex-row md:items-center md:justify-between">
-        <p>Valora © {year}</p>
+        <p>Railzway © {year}</p>
         <div className="flex flex-wrap gap-6">
           <a
             href="https://github.com"

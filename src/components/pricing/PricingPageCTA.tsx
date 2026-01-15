@@ -9,7 +9,7 @@ function PricingPageCTA() {
           <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-accent-primary/10 blur-lg" />
           <div className="relative space-y-6">
             <p className="text-xs uppercase tracking-[0.3em] text-text-muted">
-              Valora Cloud
+              Railzway Cloud
             </p>
             <h2 className="text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">
               Start billing with a predictable hybrid model

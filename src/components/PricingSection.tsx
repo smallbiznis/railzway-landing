@@ -6,9 +6,9 @@ const tiers = [
     label: "Free",
     badge: "Free tier",
     price: "$0",
-    description: "Get started with Valora Cloud and explore usage-based billing.",
+    description: "Get started with Railzway Cloud and explore usage-based billing.",
     features: [
-      "Managed Valora Cloud",
+      "Managed Railzway Cloud",
       "Free tier included",
       "Usage ingestion & metering",
       "Basic dashboards",

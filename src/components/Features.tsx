@@ -10,9 +10,9 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    title: "Subscription billing",
+    title: "Subscription Management",
     description:
-      "Define platform fees per org and the entitlements that shape billable usage.",
+      "Trialing, active, past_due, and canceled states with explicit lifecycle transitions.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
         <rect x="3" y="6" width="18" height="12" rx="2" />
@@ -22,21 +22,9 @@ const features: Feature[] = [
     ),
   },
   {
-    title: "Usage-based pricing",
+    title: "Usage Metering",
     description:
-      "Attach pricing rules to metered events and rated aggregates so usage drives charges.",
-    icon: (props) => (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
-        <path d="M4 19V5" />
-        <path d="M4 19h16" />
-        <path d="M8 15l3-3 3 3 5-6" />
-      </svg>
-    ),
-  },
-  {
-    title: "Metering & rating",
-    description:
-      "Measure product events, aggregate into meters, and rate by window for audit-ready usage totals.",
+      "Idempotent ingestion, deterministic aggregation, late and out-of-order handling.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
         <circle cx="12" cy="12" r="7" />
@@ -47,9 +35,21 @@ const features: Feature[] = [
     ),
   },
   {
-    title: "Invoices & ledger",
+    title: "Pricing Models",
     description:
-      "Generate invoices from ledgered usage and subscription state with traceable adjustments.",
+      "Flat-rate, tiered usage, and hybrid (base + usage) pricing with time-bound windows.",
+    icon: (props) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+        <path d="M4 19V5" />
+        <path d="M4 19h16" />
+        <path d="M8 15l3-3 3 3 5-6" />
+      </svg>
+    ),
+  },
+  {
+    title: "Invoicing",
+    description:
+      "Deterministic line-item generation, proration, and invoice state management.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
         <path d="M7 4h8l4 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
@@ -60,26 +60,60 @@ const features: Feature[] = [
     ),
   },
   {
-    title: "Org-scoped dashboard",
-    description: "View usage, quotas, and limits per org with role-aware controls.",
+    title: "Multi-Tenancy",
+    description: "Organization-scoped isolation and authorization.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
-        <rect x="4" y="5" width="7" height="7" rx="1.5" />
-        <rect x="13" y="5" width="7" height="5" rx="1.5" />
-        <rect x="13" y="12" width="7" height="7" rx="1.5" />
-        <rect x="4" y="14" width="7" height="5" rx="1.5" />
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
   },
   {
-    title: "OSS-first architecture",
+    title: "Audit Trail",
     description:
-      "Open-core primitives keep pricing logic portable as your model evolves.",
+      "Immutable event log for all billing state changes.",
     icon: (props) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
-        <path d="M12 4l4 4-4 4-4-4 4-4z" />
-        <path d="M8 12l-4 4 4 4" />
-        <path d="M16 12l4 4-4 4" />
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <path d="M14 2v6h6" />
+        <path d="M16 13H8" />
+        <path d="M16 17H8" />
+        <path d="M10 9H8" />
+      </svg>
+    ),
+  },
+  {
+    title: "Payment Integrations",
+    description:
+      "Built-in adapter for Stripe and extensible provider interface.",
+    icon: (props) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <path d="M2 10h20" />
+      </svg>
+    ),
+  },
+  {
+    title: "Taxation",
+    description:
+      "Configurable tax behavior (inclusive/exclusive) and basic rate application.",
+    icon: (props) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+        <path d="M12 2v20" />
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      </svg>
+    ),
+  },
+  {
+    title: "Entitlements",
+    description:
+      "Billing-driven feature provisioning and sync capabilities.",
+    icon: (props) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
       </svg>
     ),
   },
@@ -127,7 +161,7 @@ function Features() {
                   strokeWidth={1.5}
                 />
                 <span className="text-xs uppercase tracking-[0.2em] text-text-muted">
-                  Valora
+                  Railzway
                 </span>
               </div>
               <h3 className="mt-6 text-lg font-semibold text-text-primary">
