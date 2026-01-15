@@ -27,13 +27,13 @@ export default function Navbar() {
 
         <nav className="hidden md:flex items-center gap-8">
           <a
-            href="/#features"
+            href="#features"
             className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
           >
             Features
           </a>
           <a
-            href="/#architecture"
+            href="#architecture"
             className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
           >
             Architecture
@@ -57,7 +57,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <a
-            href="https://app.railzway.com/login"
+            href="https://railzway.com"
             className="hidden sm:block text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
           >
             Log in

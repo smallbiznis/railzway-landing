@@ -7,7 +7,7 @@ function Footer() {
         <p>Railzway © {year}</p>
         <div className="flex flex-wrap gap-6">
           <a
-            href="https://github.com"
+            href="https://github.com/smallbiznis/railzway"
             className="transition duration-base ease-standard hover:text-text-primary"
           >
             GitHub
