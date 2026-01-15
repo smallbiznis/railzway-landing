@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useScroll, useMotionValueEvent } from "motion/react";
 import { cn } from "../lib/cn";
 import { Button } from "./ui";
+import logo from "../assets/primary.svg";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,7 +23,8 @@ export default function Navbar() {
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6">
         <a href="/" className="flex items-center gap-2">
-          <img src="/wordmark.svg" alt="Railzway" className="h-6" />
+          <img src={logo} alt="Railzway" className="h-10" />
+          <span className="text-lg font-semibold text-text-primary">Railzway</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
