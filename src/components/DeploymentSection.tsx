@@ -25,7 +25,8 @@ function DeploymentSection() {
             </h2>
             <div className="space-y-4 text-base text-text-secondary">
               <p>
-                Railzway makes minimal assumptions about the runtime environment.
+                Railzway supports flexible deployment models. Run it as a single Monolith
+                or split into Microservices (Control, Customer, Background, Data Planes).
                 You are responsible for infrastructure, networking, TLS termination,
                 and secrets management.
               </p>
@@ -60,15 +61,31 @@ function DeploymentSection() {
                   {`services:
   railzway:
     image: ghcr.io/smallbiznis/railzway:latest
-    volumes:
-      - railzway-data:/var/lib/railzway
-      # Optional: Custom billing config
-      - ./billing.yml:/var/lib/railzway/config/billing.yml:ro
+    container_name: railzway
+    restart: unless-stopped
     ports:
       - "8080:8080"
+    environment:
 
-volumes:
-  railzway-data:`}
+      # --- Database ---
+      DB_DRIVER: postgres
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: postgres
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_SSLMODE: disable
+
+      # --- Rate Limit ---
+      RATE_LIMIT_REDIS_ADDR: localhost:6379
+      RATE_LIMIT_REDIS_PASSWORD:
+      RATE_LIMIT_REDIS_DB: 0
+
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5`}
                 </pre>
               </div>
             </Surface>

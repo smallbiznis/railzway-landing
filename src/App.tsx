@@ -8,7 +8,8 @@ import Features from "./components/Features";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import PaymentProviders from "./components/PaymentProviders";
+import FinOpsSection from "./components/FinOpsSection";
+import IntegrationsSection from "./components/IntegrationsSection";
 import UsagePhilosophySection from "./components/UsagePhilosophySection";
 import { CTA as CTA_LABELS } from "./design-system/cta";
 import { Button, Surface } from "./components/ui";
@@ -47,7 +48,8 @@ function App() {
       <Navbar />
       <Hero />
       <Features />
-      <PaymentProviders />
+      <FinOpsSection />
+      <IntegrationsSection />
 
       <BoundariesSection />
 

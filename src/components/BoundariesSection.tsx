@@ -49,7 +49,7 @@ function BoundariesSection() {
             Scope & Boundaries
           </p>
           <h2 className="text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">
-            What Railzway Is Not (v1.0)
+            What Railzway Is Not
           </h2>
           <p className="text-base text-text-secondary">
             To preserve correctness and clarity, Railzway maintains explicit boundaries.

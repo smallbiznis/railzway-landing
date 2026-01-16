@@ -17,11 +17,6 @@ function Hero() {
           animate="show"
         >
           <motion.div className="flex flex-col gap-6" variants={item}>
-            <Badge variant="neutral" size="md" className="self-start gap-2">
-              <span className="text-text-secondary">Railzway</span>
-              <span className="h-1 w-1 rounded-full bg-accent-primary/70" />
-              <span>v1.0 Target</span>
-            </Badge>
             <div className="space-y-4">
               <h1 className="text-balance text-4xl font-semibold tracking-tight text-text-primary sm:text-5xl lg:text-6xl">
                 Deterministic Billing Computation Engine

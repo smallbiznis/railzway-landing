@@ -6,6 +6,8 @@ const bulletPoints = [
   "Org-scoped workspace",
   "Event-driven billing pipeline",
   "API-first & OSS-friendly",
+  "Reliable Async Scheduler",
+  "Smart Rate Limiting",
 ];
 
 function Architecture() {
@@ -14,6 +16,7 @@ function Architecture() {
 
   return (
     <motion.section
+      id="architecture"
       className="py-20"
       variants={container}
       initial="hidden"

@@ -42,7 +42,7 @@ export default function Navbar() {
           </a>
           {/* Note: In a real app we might use react-router-dom Link for internal routes */}
           <a
-            href="/railzway-landing/pricing"
+            href="/pricing"
             className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
           >
             Pricing
@@ -64,7 +64,7 @@ export default function Navbar() {
           >
             Log in
           </a>
-          <Button as="a" href="https://app.railzway.com/signup" size="sm">
+          <Button as="a" href="https://railzway.com/signup" size="sm">
             Get Started
           </Button>
         </div>
