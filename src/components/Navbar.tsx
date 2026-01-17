@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useScroll, useMotionValueEvent } from "motion/react";
 import { cn } from "../lib/cn";
 import { Button } from "./ui";
@@ -11,6 +11,20 @@ export default function Navbar() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 20);
   });
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check for non-HttpOnly cookie set by backend
+    const checkLogin = () => {
+      // Simple check if cookie exists and is true
+      const hasCookie = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("railzway_is_logged_in=true"));
+      setIsLoggedIn(!!hasCookie);
+    };
+    checkLogin();
+  }, []);
 
   return (
     <header
@@ -48,6 +62,12 @@ export default function Navbar() {
             Pricing
           </a>
           <a
+            href="/blog"
+            className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+          >
+            Blog
+          </a>
+          <a
             href="https://docs.railzway.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -58,15 +78,23 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <a
-            href="https://railzway.com"
-            className="hidden sm:block text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
-          >
-            Log in
-          </a>
-          <Button as="a" href="https://railzway.com/signup" size="sm">
-            Get Started
-          </Button>
+          {isLoggedIn ? (
+            <Button as="a" href="/dashboard" size="sm">
+              Go to Dashboard
+            </Button>
+          ) : (
+            <>
+              <a
+                href="https://railzway.com"
+                className="hidden sm:block text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+              >
+                Log in
+              </a>
+              <Button as="a" href="https://railzway.com/signup" size="sm">
+                Get Started
+              </Button>
+            </>
+          )}
         </div>
       </div>
     </header>

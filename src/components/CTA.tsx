@@ -34,7 +34,7 @@ function CTA() {
               real product behavior, then validate pricing as you scale.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button as="a" href="#get-started">
+              <Button as="a" href="https://railzway.com/signup">
                 {CTA_LABELS.primary.getStarted}
               </Button>
               <Button as="a" href="#docs" variant="secondary">

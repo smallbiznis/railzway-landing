@@ -30,7 +30,7 @@ function Hero() {
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <Button as="a" href="#get-started">
+              <Button as="a" href="https://railzway.com/signup">
                 {CTA.primary.getStarted}
               </Button>
               <Button as="a" href="https://github.com/smallbiznis/railzway" variant="secondary">

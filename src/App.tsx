@@ -10,6 +10,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import FinOpsSection from "./components/FinOpsSection";
 import IntegrationsSection from "./components/IntegrationsSection";
+import TechStackSection from "./components/TechStackSection";
 import UsagePhilosophySection from "./components/UsagePhilosophySection";
 import { CTA as CTA_LABELS } from "./design-system/cta";
 import { Button, Surface } from "./components/ui";
@@ -30,11 +31,33 @@ const ossHighlights = [
   },
 ];
 
+import BlogIndex from "./pages/BlogIndex";
+import BlogPost from "./pages/BlogPost";
+
 function App() {
-  const isPricingRoute =
-    typeof window !== "undefined" && window.location.pathname === "/railzway-landing/pricing";
-  if (isPricingRoute) {
+  const path = typeof window !== "undefined" ? window.location.pathname : "";
+
+  // Normalize path to ignore potential base path issues on GH Pages vs Vercel
+  // If we are on root, path is "/"
+
+  // Routing Logic
+  if (path.endsWith("/pricing")) {
     return <PricingPage />;
+  }
+
+  // Blog Index
+  if (path.endsWith("/blog") || path.endsWith("/blog/")) {
+    return <BlogIndex />;
+  }
+
+  // Blog Post
+  if (path.includes("/blog/")) {
+    // Extract slug. Assumes format .../blog/slug
+    const parts = path.split("/blog/");
+    if (parts.length > 1) {
+      const slug = parts[1].replace(/\/$/, ""); // remove trailing slash
+      return <BlogPost slug={slug} />;
+    }
   }
 
   return (
@@ -47,6 +70,7 @@ function App() {
 
       <Navbar />
       <Hero />
+      <TechStackSection />
       <Features />
       <FinOpsSection />
       <IntegrationsSection />
